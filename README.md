@@ -1,7 +1,2 @@
-### Branch
-
-- **univ**
-  - #1 : 
-    - °£´ÜÇÑ ¹öÆ° Á¶ÀÛ(widget.Toast ÀÌ¿ë)
-    - res.layout ÀÇ xml, res.values ÀÇ strings.xml ÀÇ ¿ªÇÒ ÀÌÇØ
-  - #2: 
+1. ê°„ë‹¨í•œ ë²„íŠ¼ ì¡°ì‘(widget.Toast ì´ìš©)
+2. res.layout ì˜ xml, res.values ì˜ strings.xml ì˜ ì—­í•  ì´í•´
