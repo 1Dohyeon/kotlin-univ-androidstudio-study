@@ -14,3 +14,7 @@
 
 ### 4-2
 
+1. **activity_main.xml**
+   - LinearLayout 사용하여 계산기 ui 구현(숫자 버튼, 연산 버튼 등)
+2. **MainActivity.kt**
+   - activity_main 에 있는 버튼들 이벤트 처리
