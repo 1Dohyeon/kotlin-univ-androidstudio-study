@@ -4,172 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--  NUMBER  -->
-
-    <EditText
-        android:id="@+id/num1"
-        android:textSize="15sp"
-        android:hint="@string/num1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/num2"
-        android:textSize="15sp"
-        android:hint="@string/num2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <!--  NUMBER BUTTONS  -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Chronometer
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/B0"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b0"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B1"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b1"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B2"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b2"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B3"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b3"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B4"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b4"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/rounded_button">
-
-        <Button
-            android:id="@+id/B5"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b5"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B6"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b6"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B7"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b7"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B8"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b8"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-        <Button
-            android:id="@+id/B9"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:text="@string/b9"
-            android:layout_height="wrap_content"
-            android:layout_width="30dp"
-            android:background="@drawable/rounded_button"/>
-
-    </LinearLayout>
-
-    <!--  CALCULATOR BUTTONS  -->
-
+        android:format="Time: %s"
+        android:textSize="30sp"/>
     <Button
-        android:id="@+id/add"
-        android:textSize="15sp"
-        android:layout_width="match_parent"
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add"
-        android:background="@drawable/rounded_button"
-        android:layout_marginTop="10dp"/>
-
+        android:text="@string/start"/>
     <Button
-        android:id="@+id/sub"
-        android:textSize="15sp"
-        android:layout_width="match_parent"
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sub"
-        android:background="@drawable/rounded_button"/>
-
+        android:text="@string/stop"/>
     <Button
-        android:id="@+id/mul"
-        android:textSize="15sp"
-        android:layout_width="match_parent"
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mul"
-        android:background="@drawable/rounded_button"/>
-
-    <Button
-        android:id="@+id/div"
-        android:textSize="15sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/div"
-        android:background="@drawable/rounded_button"/>
-
-    <!--  RESULT  -->
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/res"
-        android:textSize="30sp"
-        android:background="@drawable/rounded_button"/>
+        android:text="@string/reset"/>
 
 </LinearLayout>
