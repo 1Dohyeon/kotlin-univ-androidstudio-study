@@ -1,8 +1,23 @@
 <resources>
     <string name="app_name">SimpleCalculator</string>
     <string name="result">Results: %s</string>
-    <string name="num1">NUM1</string>
-    <string name="num2">NUM2</string>
+    <string name="num1">NUM 1</string>
+    <string name="num2">NUM 2</string>
+    <string name="b0">0</string>
+    <string name="b1">1</string>
+    <string name="b2">2</string>
+    <string name="b3">3</string>
+    <string name="b4">4</string>
+    <string name="b5">5</string>
+    <string name="b6">6</string>
+    <string name="b7">7</string>
+    <string name="b8">8</string>
+    <string name="b9">9</string>
+    <string name="add">ADD</string>
+    <string name="sub">SUB</string>
+    <string name="mul">MUL</string>
+    <string name="div">DIV</string>
+    <string name="res">Result: </string>
 
     <!--  Linear, Relative layout .xml -->
     <string name="dot">&#8942;</string>
