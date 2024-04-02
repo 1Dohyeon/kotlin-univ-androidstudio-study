@@ -63,15 +63,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.clear.setOnClickListener {
-            if (validateNumbers()) {
-                num1 = 0.0
-                num2 = 0.0
-                result = 0.0
-
-                binding.num1.setText("")
-                binding.num2.setText("")
-                binding.result.setText("")
-            }
+            binding.num1.setText("")
+            binding.num2.setText("")
+            binding.result.setText("")
         }
     }
 
