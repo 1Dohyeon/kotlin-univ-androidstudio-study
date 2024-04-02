@@ -3,32 +3,10 @@
     <string name="result">Results: %s</string>
     <string name="num1">NUM 1</string>
     <string name="num2">NUM 2</string>
-    <string name="b0">0</string>
-    <string name="b1">1</string>
-    <string name="b2">2</string>
-    <string name="b3">3</string>
-    <string name="b4">4</string>
-    <string name="b5">5</string>
-    <string name="b6">6</string>
-    <string name="b7">7</string>
-    <string name="b8">8</string>
-    <string name="b9">9</string>
     <string name="add">ADD</string>
     <string name="sub">SUB</string>
     <string name="mul">MUL</string>
     <string name="div">DIV</string>
+    <string name="clear">CLEAR</string>
     <string name="res">Result: </string>
-
-    <!--  Linear, Relative layout .xml -->
-    <string name="dot">&#8942;</string>
-    <string name="title">코딩 &amp; 공부할 때 듣는 음악 - 집중할 때 듣기 좋은 편안한 Lo-Fi 재즈</string>
-    <string name="tag1">Musictag \u2022 </string>
-    <string name="tag2">조회수 857만회\u2022 </string>
-    <string name="tag3">1년전</string>
-    <string name="tag">Musictag \u2022 조회수 857만회\u2022 1년전</string>
-
-    <!--  Frame layout .xml -->
-    <string name="red">RED</string>
-    <string name="blue">BLUE</string>
-    <string name="green">GREEN</string>
 </resources>
