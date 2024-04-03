@@ -4,6 +4,9 @@
     <string name="stop">stop</string>
     <string name="reset">reset</string>
     <string name="anytext">anytext</string>
+    <string name="plus5">+5</string>
+    <string name="sub5">-5</string>
+    <string name="lab">Lab</string>
 
     <string-array name="countries_array">
         <item>India</item>

@@ -4,43 +4,70 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Chronometer
 import android.widget.MultiAutoCompleteTextView
 import example.univ.myapplication.databinding.ActivityMainBinding
 import example.univ.myapplication.databinding.AutocompleteBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
-     lateinit var binding2: AutocompleteBinding
+    private lateinit var binding: ActivityMainBinding
+    private val DEBUG_TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val DEBUG_TAG = "MyActivity"
 
-        binding.timer.stop()
+        val timer: Chronometer = binding.timer
+        val startButton: Button = binding.start
+        val stopButton: Button = binding.stop
+        val labButton: Button = binding.lab
+        val resetButton: Button = binding.reset
 
-        // start 를 안 눌러도 timer가 흐르긴 함. start는 보여주기만 할 뿐
-        binding.start.setOnClickListener {
-            binding.timer.start()
-            Log.d(DEBUG_TAG, "clicked_start")
+        // Start 버튼 클릭 리스너 설정
+        startButton.setOnClickListener {
+            if (!timer.isActivated) { // 타이머가 활성화되어 있지 않으면
+                timer.start() // 타이머 시작
+                startButton.visibility = View.INVISIBLE // Start 버튼 숨기기
+                stopButton.visibility = View.VISIBLE // Stop 버튼 보이기
+                labButton.visibility = View.VISIBLE // Lab 버튼 보이기
+                resetButton.visibility = View.INVISIBLE // Reset 버튼 숨기기
+                Log.d(DEBUG_TAG, "Timer started")
+            }
         }
 
-        // stop 도 마찬가지임. timer를 멈추지 않고, 보여주는 것만 멈춤
-        binding.stop.setOnClickListener {
-            binding.timer.stop()
-            Log.d(DEBUG_TAG, "clicked_stop")
+        // Stop 버튼 클릭 리스너 설정
+        stopButton.setOnClickListener {
+            if (timer.isActivated) { // 타이머가 활성화되어 있으면
+                timer.stop() // 타이머 정지
+                startButton.visibility = View.VISIBLE // Start 버튼 보이기
+                stopButton.visibility = View.INVISIBLE // Stop 버튼 숨기기
+                resetButton.visibility = View.VISIBLE // Reset 버튼 보이기
+                labButton.visibility = View.INVISIBLE // Lab 버튼 숨기기
+                Log.d(DEBUG_TAG, "Timer stopped")
+            }
         }
 
-//        autocomplete
-//        binding2 = AutocompleteBinding.inflate(layoutInflater)
-//        setContentView(binding2.root)
-//        val countries = resources.getStringArray(R.array.countries_array)
-//        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, countries)
-//        binding2.auto.setAdapter(adapter)
-//        binding2.multiauto.threshold = 1
-//        binding2.multiauto.setTokenizer(MultiAutoCompleteTextView.CommaTokenizer())
+        // Lab 버튼 클릭 리스너 설정
+        labButton.setOnClickListener {
+            // Lab 버튼 클릭 시 현재 시간을 Log에 출력
+            Log.d(DEBUG_TAG, "Lab clicked")
+        }
 
+        // Reset 버튼 클릭 리스너 설정
+        resetButton.setOnClickListener {
+            // Reset 버튼 클릭 시 타이머를 초기화하고, 모든 버튼을 초기 상태로 되돌림
+            timer.base = System.currentTimeMillis()
+            timer.stop()
+            startButton.visibility = View.VISIBLE // Start 버튼 보이기
+            stopButton.visibility = View.INVISIBLE // Stop 버튼 숨기기
+            resetButton.visibility = View.VISIBLE // Reset 버튼 보이기
+            labButton.visibility = View.INVISIBLE // Lab 버튼 숨기기
+            Log.d(DEBUG_TAG, "Timer reset")
+        }
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
