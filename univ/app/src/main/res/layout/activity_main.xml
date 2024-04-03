@@ -6,24 +6,38 @@
 
     <Chronometer
         android:id="@+id/timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:format="Time: %s"
-        android:textSize="30sp"/>
-    <Button
-        android:id="@+id/start"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:paddingTop="80dp"/>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start"/>
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stop"/>
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reset"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start"/>
+        <Button
+            android:id="@+id/plus5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/puls5"/>
+        <Button
+            android:id="@+id/sub5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minus5"/>
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start"/>
+
+    </LinearLayout>
 
 </LinearLayout>

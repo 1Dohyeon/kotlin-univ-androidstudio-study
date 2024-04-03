@@ -3,4 +3,13 @@
     <string name="start">start</string>
     <string name="stop">stop</string>
     <string name="reset">reset</string>
+    <string name="anytext">anytext</string>
+
+    <string-array name="countries_array">
+        <item>India</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+    </string-array>
 </resources>
