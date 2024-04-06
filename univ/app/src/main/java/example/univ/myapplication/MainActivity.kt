@@ -5,12 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Chronometer
-import android.widget.MultiAutoCompleteTextView
 import example.univ.myapplication.databinding.ActivityMainBinding
-import example.univ.myapplication.databinding.AutocompleteBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
