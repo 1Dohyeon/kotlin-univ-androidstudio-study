@@ -22,28 +22,32 @@
             android:id="@+id/reset"
             android:layout_width="102.75dp"
             android:layout_height="wrap_content"
-            android:text="@string/reset"/>
+            android:text="@string/reset"
+            android:background="@color/black"/>
 
         <Button
             android:id="@+id/plus5"
             android:layout_width="102.75dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="102.75dp"
-            android:text="@string/plus5"/>
+            android:text="@string/plus5"
+            android:background="@color/black"/>
 
         <Button
             android:id="@+id/sub5"
             android:layout_width="102.75dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="205.5dp"
-            android:text="@string/sub5"/>
+            android:text="@string/sub5"
+            android:background="@color/black"/>
 
         <Button
             android:id="@+id/start"
             android:layout_width="102.75dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="308.25dp"
-            android:text="@string/start"/>
+            android:text="@string/start"
+            android:background="@color/black"/>
 
         <Button
             android:id="@+id/lab"
@@ -51,7 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:visibility="invisible"
-            android:text="@string/lab"/>
+            android:text="@string/lab"
+            android:background="@color/black"/>
 
         <Button
             android:id="@+id/stop"
@@ -59,12 +64,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:visibility="invisible"
-            android:text="@string/stop"/>
+            android:text="@string/stop"
+            android:background="@color/black"/>
 
     </FrameLayout>
 
 
     <LinearLayout
+        android:id="@+id/times"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
