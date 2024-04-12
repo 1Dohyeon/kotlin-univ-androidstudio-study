@@ -11,7 +11,7 @@ import android.widget.Toast
 import example.univ.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         var num1: Double
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
     private fun onClick(v: View?) {
         // 버튼의 value 를 문자열로 가져옴
         var input:String = (v as Button).text.toString()
-        
+
         // 포커싱된 View에 기존 문자열과 현재 클릭한 번호의 문자열을 추가해주고 업데이트 함
         if(binding.num1.isFocused) {
             input = binding.num1.text.toString() + input
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
             binding.B6, binding.B7, binding.B8, binding.B9, binding.point)
 
         numberButtons.forEach {
-            btn -> btn.setOnClickListener { onClick(btn) }
+                btn -> btn.setOnClickListener { onClick(btn) }
         }
     }
 
