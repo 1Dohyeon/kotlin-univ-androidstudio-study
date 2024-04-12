@@ -4,78 +4,85 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Chronometer
-        android:id="@+id/timer"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:format="Time: %s"
-        android:textSize="30sp"
-        android:textAlignment="center"
-        android:paddingTop="80dp"/>
-
-    <FrameLayout
-        android:id="@+id/buttonLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/reset"
-            android:layout_width="102.75dp"
-            android:layout_height="wrap_content"
-            android:text="@string/reset"
-            android:background="@color/black"/>
-
-        <Button
-            android:id="@+id/plus5"
-            android:layout_width="102.75dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="102.75dp"
-            android:text="@string/plus5"
-            android:background="@color/black"/>
-
-        <Button
-            android:id="@+id/sub5"
-            android:layout_width="102.75dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="205.5dp"
-            android:text="@string/sub5"
-            android:background="@color/black"/>
-
-        <Button
-            android:id="@+id/start"
-            android:layout_width="102.75dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="308.25dp"
-            android:text="@string/start"
-            android:background="@color/black"/>
-
-        <Button
-            android:id="@+id/lab"
-            android:layout_width="102.75dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:visibility="invisible"
-            android:text="@string/lab"
-            android:background="@color/black"/>
-
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="102.75dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:visibility="invisible"
-            android:text="@string/stop"
-            android:background="@color/black"/>
-
-    </FrameLayout>
-
-
     <LinearLayout
-        android:id="@+id/times"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <Chronometer
+            android:id="@+id/chrono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:format="@string/timeForBooking"/>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/startBooking" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rdoCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/setDate"/>
+
+        <RadioButton
+            android:id="@+id/rdoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/setTime"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <CalendarView
+                android:id="@+id/calenderView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"/>
+
+            <TimePicker
+                android:id="@+id/timerPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/endBooking"/>
+            <TextView
+                android:id="@+id/res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"/>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
