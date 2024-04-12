@@ -1,59 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
+<!--60202464 원도현-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_vertical">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/widget1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/widget1"
+            android:textColor="#818181"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/widget2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/widget2"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/widget3"
+            android:background="#5A29DF"
+            android:layout_width="197dp"
+            android:layout_height="197dp"
+            android:text="@string/widget3"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/widget4"
+            android:background="#5A29DF"
+            android:layout_width="197dp"
+            android:layout_height="197dp"
+            android:text="@string/widget4"
+            android:layout_marginLeft="7dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/widget5"
+            android:background="#5A29DF"
+            android:layout_width="401dp"
+            android:layout_height="70dp"
+            android:text="@string/widget5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/widget6"
+            android:background="#5A29DF"
+            android:layout_width="197dp"
+            android:layout_height="197dp"
+            android:text="@string/widget3"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/widget7"
+            android:background="#5A29DF"
+            android:layout_width="197dp"
+            android:layout_height="197dp"
+            android:text="@string/widget4"
+            android:layout_marginLeft="7dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/widget8"
+            android:background="#5A29DF"
+            android:layout_width="401dp"
+            android:layout_height="70dp"
+            android:text="@string/widget5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_launcher_background"/>
-
         <TextView
-            android:id="@+id/title"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:text="@string/title" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="#000000"
-            android:gravity="top|center_horizontal"
-            android:text="@string/dot"
-            android:textColor="@color/black"/>
+            android:id="@+id/widget9"
+            android:background="#5A29DF"
+            android:layout_width="129dp"
+            android:layout_height="70dp"
+            android:text="@string/widget6"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/widget10"
+            android:background="#5A29DF"
+            android:layout_width="129dp"
+            android:layout_height="70dp"
+            android:text="@string/widget7"
+            android:layout_marginLeft="7dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/widget11"
+            android:background="#5A29DF"
+            android:layout_width="129dp"
+            android:layout_height="70dp"
+            android:text="@string/widget8"
+            android:layout_marginLeft="7dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:baselineAligned="true"
-        android:layout_marginLeft="50dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tag1"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tag2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tag3"/>
-
-    </LinearLayout>
 </LinearLayout>

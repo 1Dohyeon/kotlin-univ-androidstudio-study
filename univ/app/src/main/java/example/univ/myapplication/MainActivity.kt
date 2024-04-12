@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        var num1: Int
-        var num2: Int
-        var result: Int
+        var num1: Double
+        var num2: Double
+        var result: Double
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.add.setOnClickListener {
             if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toInt()
-                num2 = binding.num2.text.toString().toInt()
+                num1 = binding.num1.text.toString().toDouble()
+                num2 = binding.num2.text.toString().toDouble()
 
                 result = num1 + num2
                 binding.result.text = getString(R.string.result, result.toString())
@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.sub.setOnClickListener {
             if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toInt()
-                num2 = binding.num2.text.toString().toInt()
+                num1 = binding.num1.text.toString().toDouble()
+                num2 = binding.num2.text.toString().toDouble()
 
                 result = num1 - num2
                 binding.result.text = getString(R.string.result, result.toString())
@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.mul.setOnClickListener {
             if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toInt()
-                num2 = binding.num2.text.toString().toInt()
+                num1 = binding.num1.text.toString().toDouble()
+                num2 = binding.num2.text.toString().toDouble()
 
                 result = num1 * num2
                 binding.result.text = getString(R.string.result, result.toString())
@@ -58,16 +58,22 @@ class MainActivity : AppCompatActivity() {
 
         binding.div.setOnClickListener {
             if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toInt()
-                num2 = binding.num2.text.toString().toInt()
+                num1 = binding.num1.text.toString().toDouble()
+                num2 = binding.num2.text.toString().toDouble()
 
-                if (num2 != 0) {
+                if (num2 != 0.0) {
                     result = num1 / num2
                     binding.result.text = getString(R.string.result, result.toString())
                 } else {
                     Toast.makeText(this, "0으로 나눌 수 없습니다.", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+
+        binding.clear.setOnClickListener {
+            binding.num1.setText("")
+            binding.num2.setText("")
+            binding.result.setText("")
         }
     }
 
@@ -103,7 +109,7 @@ class MainActivity : AppCompatActivity() {
     /** 버튼 클릭 시에 onClick 메서드 실행 */
     private fun setOnClickButton() {
         val numberButtons = listOf(binding.B0, binding.B1, binding.B2, binding.B3, binding.B4, binding.B5,
-            binding.B6, binding.B7, binding.B8, binding.B9)
+            binding.B6, binding.B7, binding.B8, binding.B9, binding.point)
 
         numberButtons.forEach {
             btn -> btn.setOnClickListener { onClick(btn) }
@@ -121,10 +127,11 @@ class MainActivity : AppCompatActivity() {
             return false
         }
 
-        // int 범위 밖을 넘어갔을 때 에러 처리 및 정수가 아닌 다른 문자를 받았을 때 에러처리
+        // Double 범위 밖을 넘어갔을 때 에러 처리
+        // 소수 아닌 다른 문자를 받았을 때 에러 처리
         try {
-            num1Str.toInt()
-            num2Str.toInt()
+            num1Str.toDouble()
+            num2Str.toDouble()
         } catch (e: NumberFormatException) {
             Toast.makeText(this, "가능한 정수 범위가 아닙니다.", Toast.LENGTH_SHORT).show()
             return false

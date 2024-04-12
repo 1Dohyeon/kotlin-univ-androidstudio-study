@@ -13,22 +13,22 @@
     <string name="b7">7</string>
     <string name="b8">8</string>
     <string name="b9">9</string>
+    <string name="point">.</string>
     <string name="add">ADD</string>
     <string name="sub">SUB</string>
     <string name="mul">MUL</string>
     <string name="div">DIV</string>
+    <string name="clear">CLEAR</string>
     <string name="res">Result: </string>
 
-    <!--  Linear, Relative layout .xml -->
-    <string name="dot">&#8942;</string>
-    <string name="title">코딩 &amp; 공부할 때 듣는 음악 - 집중할 때 듣기 좋은 편안한 Lo-Fi 재즈</string>
-    <string name="tag1">Musictag \u2022 </string>
-    <string name="tag2">조회수 857만회\u2022 </string>
-    <string name="tag3">1년전</string>
-    <string name="tag">Musictag \u2022 조회수 857만회\u2022 1년전</string>
+    <!--  Linear layout .xml -->
+    <string name="widget1">widget1</string>
+    <string name="widget2">widget2</string>
+    <string name="widget3">WIDGET3</string>
+    <string name="widget4">WIDGET4</string>
+    <string name="widget5">WIDGET5</string>
+    <string name="widget6">WIDGET6</string>
+    <string name="widget7">WIDGET7</string>
+    <string name="widget8">WIDGET8</string>
 
-    <!--  Frame layout .xml -->
-    <string name="red">RED</string>
-    <string name="blue">BLUE</string>
-    <string name="green">GREEN</string>
 </resources>
