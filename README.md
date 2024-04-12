@@ -18,4 +18,4 @@
     
   - #5 : 5-1, 5-2 "xml 에서 `Chronometer`를 이용하여 타이머 뷰를 생성하고, 이를 바인딩 하여 timer 기능을 구현. timer를 start, stop, lab(최대 5개 기록들 저장), +5초, -5초 기능을 구현. 또한 버튼은 최대 4개로 timer 작동 상태에 따라 보여주는 버튼이 다름. `CircularQueue` 자료구조를 이용하여 기록 저장 및 삭제"
 
-  - #6 : 6-1, 6-2 " 예약 프로그램으로 `Chronometer`를 이용하여 예약에 걸린 시간을 구하 `RadioButton`을 통해서 날짜와 시간을 선택하게 함. 날짜를 선택하기 위한 `CalendarView`에서 값을 get하여 불러오고, 시간을 선택하기 위한 `TimePicker`의 값을 hour, minute으로 나누어 불러옴." 
+  - #6 : 6-1, 6-2 " 예약 프로그램으로 `Chronometer`를 이용하여 예약에 걸린 시간을 구하 `RadioButton`을 통해서 날짜와 시간을 선택하게 함. 날짜를 선택하기 위한 `CalendarView`에서 값을 get하여 불러오고, 시간을 선택하기 위한 `TimePicker`의 값을 hour, minute으로 나누어 불러옴. 값을 불러오기 위해 `findViewById`이용" 
