@@ -10,15 +10,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.Chronometer
-import android.widget.LinearLayout
 import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.TimePicker
 import androidx.annotation.RequiresApi
 import example.univ.myapplication.databinding.ActivityMainBinding
-import java.lang.reflect.Array
-import java.util.Arrays
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
