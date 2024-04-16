@@ -1,17 +1,10 @@
 package example.univ.myapplication
 
-import android.content.Context
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.MotionEvent
-import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.Toast
 import example.univ.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
