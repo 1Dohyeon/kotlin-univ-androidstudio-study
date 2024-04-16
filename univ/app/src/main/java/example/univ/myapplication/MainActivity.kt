@@ -5,14 +5,16 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.material.tabs.TabLayout
 import example.univ.myapplication.databinding.ActivityMainBinding
+import example.univ.myapplication.databinding.TablayoutBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: TablayoutBinding
     private val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = TablayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         /** Tool Bar 의 menu */
@@ -21,20 +23,30 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.setHomeAsUpIndicator(androidx.appcompat.R.drawable.abc_btn_colored_material)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
-        /** Fragment */
-        binding.button1.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(binding.fragView.id, ExampleFragment())
-                .commit()
-            Log.d(TAG, "Button 1 clicked")
-        }
+        /** Tab */
+        val tab = binding.tab
+        val tab1: TabLayout.Tab = tab.newTab()
+        tab1.text = "tab1"
+        tab.addTab(tab1)
+        tab.addTab(tab.newTab().setText("tab2"))
+        tab.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                val transaction = supportFragmentManager.beginTransaction()
+                when(tab?.text){
+                    "tab1" -> transaction.replace(R.id.tabContent, ExampleFragment())
+                    "tab2" -> transaction.replace(binding.tabContent.id, ExampleFragmentTwo())
+                }
+                transaction.commit()
+            }
 
-        binding.button2.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(binding.fragView.id, ExampleFragmentTwo())
-                .commit()
-            Log.d(TAG, "Button 2 clicked")
-        }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                /*   */
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                /*   */
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
