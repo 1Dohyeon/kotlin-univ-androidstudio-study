@@ -24,4 +24,4 @@
  
   -  #8 : 하노이 알고리즘, 7-1 "themes.xml에서 기본 색상 변경 후 Toolbar 제작 및 menu layout Toolbar에 설정, Fragment를 통해 두 화면을 버튼으로 넘기면서 보여줌"
 
-  -  #9 : 7-2 "TabLayout"
+  -  #9 : 7-2 "TabLayout 기본, adapter와 viewpager를 사용한 tablayout 응용"
