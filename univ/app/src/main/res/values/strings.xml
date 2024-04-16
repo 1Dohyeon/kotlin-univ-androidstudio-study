@@ -1,34 +1,15 @@
 <resources>
-    <string name="app_name">SimpleCalculator</string>
-    <string name="result">Results: %s</string>
-    <string name="num1">NUM 1</string>
-    <string name="num2">NUM 2</string>
-    <string name="b0">0</string>
-    <string name="b1">1</string>
-    <string name="b2">2</string>
-    <string name="b3">3</string>
-    <string name="b4">4</string>
-    <string name="b5">5</string>
-    <string name="b6">6</string>
-    <string name="b7">7</string>
-    <string name="b8">8</string>
-    <string name="b9">9</string>
-    <string name="point">.</string>
-    <string name="add">ADD</string>
-    <string name="sub">SUB</string>
-    <string name="mul">MUL</string>
-    <string name="div">DIV</string>
-    <string name="clear">CLEAR</string>
-    <string name="res">Result: </string>
 
-    <!--  Linear layout .xml -->
-    <string name="widget1">widget1</string>
-    <string name="widget2">widget2</string>
-    <string name="widget3">WIDGET3</string>
-    <string name="widget4">WIDGET4</string>
-    <string name="widget5">WIDGET5</string>
-    <string name="widget6">WIDGET6</string>
-    <string name="widget7">WIDGET7</string>
-    <string name="widget8">WIDGET8</string>
 
+    <string name="app_name">mobile computing</string>
+
+    <string name="item1">item1</string>
+    <string name="item2">item2</string>
+    <string name="item3">item3</string>
+
+    <string name="Frag1">Flag1</string>
+    <string name="Frag2">Flag2</string>
+
+    <string name="text1">text1</string>
+    <string name="text2">text2</string>
 </resources>
