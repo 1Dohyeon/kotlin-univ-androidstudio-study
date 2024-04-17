@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import example.univ.myapplication.databinding.ActivityMainBinding
 import example.univ.myapplication.databinding.TablayoutBinding
-
+// 60202464 원도현
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: TablayoutBinding
     private val TAG = "MainActivity"
@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
         binding = TablayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /** Tool Bar 의 menu */
+        /** Tool Bar menu */
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(androidx.appcompat.R.drawable.abc_btn_colored_material)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
-        /** Tab: adapter 없이 */
+        /** Tab */
 //        val tab = binding.tab
 //        val tab1: TabLayout.Tab = tab.newTab()
 //        tab1.text = "tab1"
