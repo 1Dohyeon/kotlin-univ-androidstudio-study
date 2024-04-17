@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import example.univ.myapplication.databinding.ActivityMainBinding
 
+// 60202464 원도현
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val TAG = "MainActivity"
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /** Tool Bar 의 menu */
+        /** Tool Bar menu */
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(androidx.appcompat.R.drawable.abc_btn_colored_material)
