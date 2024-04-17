@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        })
 
-        /** Tab: viewpager와 adapter 활용 */
+        /** Tab: viewpager와 adapter 활용 -> 슬라이드로도 넘길 수 있음 */
         val tabLayout = binding.tab
         val viewPage = binding.viewpager
         viewPage.adapter = FragmentAdapter(supportFragmentManager, lifecycle)
