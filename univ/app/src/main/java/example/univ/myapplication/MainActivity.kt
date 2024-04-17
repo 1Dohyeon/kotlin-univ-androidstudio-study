@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import example.univ.myapplication.databinding.ActivityMainBinding
 import example.univ.myapplication.databinding.TablayoutBinding
-// 60202464 원도현
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: TablayoutBinding
     private val TAG = "MainActivity"
