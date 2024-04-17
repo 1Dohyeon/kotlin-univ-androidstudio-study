@@ -129,6 +129,7 @@
 
     <!--  CALCULATOR BUTTONS  -->
 
+    <!--  . 버튼 추가  -->
     <Button
         android:id="@+id/point"
         android:textSize="15sp"

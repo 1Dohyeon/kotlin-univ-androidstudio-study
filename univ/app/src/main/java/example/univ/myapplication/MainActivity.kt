@@ -13,6 +13,7 @@ import example.univ.myapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         var num1: Double
         var num2: Double
@@ -22,69 +23,80 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // number 버튼 입력 처리
-        setOnClickButton()
+        setOnClickNumberButtons()
 
         // ---- 연산 버튼 ----
-
-        binding.add.setOnClickListener {
+        fun performCalculation(operator: Char) {
             if (validateNumbers()) {
                 num1 = binding.num1.text.toString().toDouble()
                 num2 = binding.num2.text.toString().toDouble()
 
-                result = num1 + num2
+                result =
+                    when (operator) {
+                        '+' -> num1 + num2
+                        '-' -> num1 - num2
+                        '*' -> num1 * num2
+                        '/' -> if (num2 != 0.0) {
+                            num1 / num2
+                        } else {
+                            Toast.makeText(this, "0으로 나눌 수 없습니다.", Toast.LENGTH_SHORT).show()
+                            return
+                        }
+                        else -> {
+                            // 다른 연산자일 때 예외 처리, 직접 연산자 넣어줄거라 주석처리
+                            // Toast.makeText(this, "잘못된 연산자입니다.", Toast.LENGTH_SHORT).show()
+                            return
+                        }
+                    }
                 binding.result.text = getString(R.string.result, result.toString())
             }
+        }
+
+        binding.add.setOnClickListener {
+            performCalculation('+')
         }
 
         binding.sub.setOnClickListener {
-            if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toDouble()
-                num2 = binding.num2.text.toString().toDouble()
-
-                result = num1 - num2
-                binding.result.text = getString(R.string.result, result.toString())
-            }
+            performCalculation('-')
         }
 
         binding.mul.setOnClickListener {
-            if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toDouble()
-                num2 = binding.num2.text.toString().toDouble()
-
-                result = num1 * num2
-                binding.result.text = getString(R.string.result, result.toString())
-            }
+            performCalculation('*')
         }
 
         binding.div.setOnClickListener {
-            if (validateNumbers()) {
-                num1 = binding.num1.text.toString().toDouble()
-                num2 = binding.num2.text.toString().toDouble()
-
-                if (num2 != 0.0) {
-                    result = num1 / num2
-                    binding.result.text = getString(R.string.result, result.toString())
-                } else {
-                    Toast.makeText(this, "0으로 나눌 수 없습니다.", Toast.LENGTH_SHORT).show()
-                }
-            }
+            performCalculation('/')
         }
+
 
         binding.clear.setOnClickListener {
             binding.num1.setText("")
             binding.num2.setText("")
-            binding.result.setText("")
+            binding.result.setText("Result: ")
         }
     }
 
+
+
     /** 터치 이벤트를 처리하고 이벤트가 발생한 경우 현재 포커스된 뷰가 있으면 키보드를 숨김.
-     * 또한, 이벤트가 계속해서 처리될 수 있도록 super.dispatchTouchEvent(ev)를 호출 */
+     * 이벤트가 계속해서 처리될 수 있도록 super.dispatchTouchEvent(ev)를 호출 */
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         if(currentFocus != null) {
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
         }
         return super.dispatchTouchEvent(ev)
+    }
+
+    /** point & number 버튼 클릭 시에 onClick 메서드 실행 */
+    private fun setOnClickNumberButtons() {
+        val numberButtons = listOf(binding.B0, binding.B1, binding.B2,
+            binding.B3, binding.B4, binding.B5, binding.B6,
+            binding.B7, binding.B8, binding.B9, binding.point)
+
+        numberButtons.forEach {
+                btn -> btn.setOnClickListener { onClick(btn) }
+        }
     }
 
     /** View 객체에서 클릭된 버튼의 텍스트를 가져와서 문자열로 변환한 후,
@@ -102,17 +114,8 @@ class MainActivity : AppCompatActivity() {
             binding.num2.setText(input)
         } else {
             // num1, num2 View 를 클릭하지 않고, 번호 버튼을 클릭했을 경우
-            Toast.makeText(applicationContext, "Please click num1 or num2", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    /** 버튼 클릭 시에 onClick 메서드 실행 */
-    private fun setOnClickButton() {
-        val numberButtons = listOf(binding.B0, binding.B1, binding.B2, binding.B3, binding.B4, binding.B5,
-            binding.B6, binding.B7, binding.B8, binding.B9, binding.point)
-
-        numberButtons.forEach {
-                btn -> btn.setOnClickListener { onClick(btn) }
+            Toast.makeText(applicationContext, "num1 또는 num2 을 클릭해야 합니다.",
+                Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -127,16 +130,16 @@ class MainActivity : AppCompatActivity() {
             return false
         }
 
-        // Double 범위 밖을 넘어갔을 때 에러 처리
         // 소수 아닌 다른 문자를 받았을 때 에러 처리
         try {
             num1Str.toDouble()
             num2Str.toDouble()
         } catch (e: NumberFormatException) {
-            Toast.makeText(this, "가능한 정수 범위가 아닙니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "가능한 범위가 아닙니다.", Toast.LENGTH_SHORT).show()
             return false
         }
 
         return true
     }
+
 }
