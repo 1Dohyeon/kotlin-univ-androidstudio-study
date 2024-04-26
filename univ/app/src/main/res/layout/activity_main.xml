@@ -17,18 +17,13 @@
             android:textSize="20sp"
             android:format="@string/timeForBooking"/>
 
-        <Button
-            android:id="@+id/btnStart"
-            android:textSize="20sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/startBooking" />
-
     </LinearLayout>
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
         <RadioButton
             android:id="@+id/rdoCal"
             android:layout_width="wrap_content"
@@ -50,6 +45,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
         <FrameLayout
+            android:id="@+id/dateViews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
@@ -71,16 +67,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
-                android:id="@+id/btnEnd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/endBooking"/>
             <TextView
                 android:id="@+id/res"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="@string/textBar"
                 android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>

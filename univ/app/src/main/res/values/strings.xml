@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">SimpleCalculator</string>
     <string name="timeForBooking">예약에 걸린 시간 %s</string>
-    <string name="startBooking">예약시작</string>
     <string name="setDate">날짜 설정</string>
     <string name="setTime">시간 설정</string>
-    <string name="endBooking">예약완료</string>
+    <string name="textBar">textBar</string>
 
 </resources>
