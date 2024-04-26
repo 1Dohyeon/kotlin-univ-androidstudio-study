@@ -5,4 +5,7 @@
     <string name="setTime">시간 설정</string>
     <string name="textBar">textBar</string>
 
+    <string name="Frag1">Flag1</string>
+    <string name="Frag2">Flag2</string>
+
 </resources>
