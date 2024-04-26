@@ -16,7 +16,6 @@ import android.widget.TextView
 import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import example.univ.myapplication.databinding.ExampleFragmentTwoBinding
-import example.univ.myapplication.databinding.TabLayoutBinding
 import androidx.annotation.RequiresApi
 
 class ExampleFragmentTwo: Fragment() {

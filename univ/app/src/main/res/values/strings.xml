@@ -8,4 +8,11 @@
     <string name="Frag1">Flag1</string>
     <string name="Frag2">Flag2</string>
 
+    <string name="start">start</string>
+    <string name="stop">stop</string>
+    <string name="reset">reset</string>
+    <string name="plus5">+5</string>
+    <string name="sub5">-5</string>
+    <string name="lab">Lab</string>
+
 </resources>
