@@ -42,6 +42,7 @@ class  ExampleFragment: Fragment() {
                 stopButton.visibility = View.VISIBLE // Stop 버튼 보이기
 
                 Log.d(DEBUG_TAG, "Timer started")
+                Log.d("DEBUG", "timer.base: ${timer.base}, SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}, time: $time")
             }
         }
 
@@ -56,19 +57,23 @@ class  ExampleFragment: Fragment() {
                 stopButton.visibility = View.INVISIBLE // Stop 버튼 숨기기
 
                 Log.d(DEBUG_TAG, "Timer stopped")
+                Log.d("DEBUG", "timer.base: ${timer.base}, SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}, time: $time")
             }
         }
+
 
         // Reset 버튼 클릭 리스너 설정
         resetButton.setOnClickListener {
             // Reset 버튼 클릭 시 타이머를 초기화하고, 모든 버튼을 초기 상태로 되돌림
             timer.base = SystemClock.elapsedRealtime()
+            stopButton.performClick()
             time = SystemClock.elapsedRealtime() - timer.base
 
             startButton.visibility = View.VISIBLE // Start 버튼 보이기
             stopButton.visibility = View.INVISIBLE // Stop 버튼 숨기기
 
             Log.d(DEBUG_TAG, "Timer reset")
+            Log.d("DEBUG", "timer.base: ${timer.base}, SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}, time: $time")
         }
 
         return binding.root
