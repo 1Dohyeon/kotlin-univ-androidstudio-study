@@ -1,8 +1,6 @@
 package example.univ.myapplication
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,20 +9,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Chronometer
 import androidx.fragment.app.Fragment
-import example.univ.myapplication.databinding.ExampleFragmentBinding
+import example.univ.myapplication.databinding.TagOnePageBinding
 
-class  ExampleFragment: Fragment() {
-    private lateinit var binding: ExampleFragmentBinding
-    private val DEBUG_TAG = "ExampleFragment"
-
-    private val handler = Handler(Looper.getMainLooper())
+class  TagOneActivity: Fragment() {
+    private lateinit var binding: TagOnePageBinding
+    private val DEBUG_TAG = "TagOnePage"
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         super.onCreate(savedInstanceState)
-        binding = ExampleFragmentBinding.inflate(layoutInflater)
+        binding = TagOnePageBinding.inflate(layoutInflater)
 
         val timer: Chronometer = binding.timer
         val startButton: Button = binding.start
@@ -32,29 +28,15 @@ class  ExampleFragment: Fragment() {
         val resetButton: Button = binding.reset
 
         var flag: Boolean = false
-        var time: Long = 0
-        Log.d(DEBUG_TAG, "APP Start")
-        Log.d("DEBUG", "timer.base: ${timer.base}, SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}, time: $time")
-
-        val runnable = object : Runnable {
-            override fun run() {
-                Log.d("DEBUG", "time: $time")
-                handler.postDelayed(this, 1000)
-            }
-        }
+        var time: Long = SystemClock.elapsedRealtime() - timer.base
 
         // Start 버튼 클릭 리스너 설정
         startButton.setOnClickListener {
             if (!flag) { // 타이머가 활성화되어 있지 않으면
-                /**
-                 * time:
-                 * SystemClock.elapsedRealtime():
-                 * timer.base:
-                 * */
                 timer.base = SystemClock.elapsedRealtime() - time
+
                 timer.start() // 타이머 시작
                 flag = true
-                handler.post(runnable)
 
                 startButton.visibility = View.INVISIBLE // Start 버튼 숨기기
                 stopButton.visibility = View.VISIBLE // Stop 버튼 보이기
@@ -80,17 +62,19 @@ class  ExampleFragment: Fragment() {
         }
 
 
-        /** Reset 버튼 클릭 시 타이머를 초기화하고, stop 버튼 실행 후 stop -> start 버튼으로 전환 */
+        // Reset 버튼 클릭 리스너 설정
         resetButton.setOnClickListener {
+            // Reset 버튼 클릭 시 타이머를 초기화하고, 모든 버튼을 초기 상태로 되돌림
             timer.base = SystemClock.elapsedRealtime()
             stopButton.performClick()
-            time = 0
+            time = SystemClock.elapsedRealtime() - timer.base
 
+            /** xml 접근 방식 */
             startButton.visibility = View.VISIBLE // Start 버튼 보이기
             stopButton.visibility = View.INVISIBLE // Stop 버튼 숨기기
 
             Log.d(DEBUG_TAG, "Timer reset")
-            Log.d("DEBUG", "timer.base: ${timer.base}, SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}, time: $time")
+            Log.d(DEBUG_TAG, "timer.base: ${timer.base}, SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}, time: $time")
         }
 
         return binding.root

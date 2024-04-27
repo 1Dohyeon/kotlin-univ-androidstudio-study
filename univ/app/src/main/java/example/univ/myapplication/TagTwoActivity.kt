@@ -14,13 +14,13 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.TimePicker
-import androidx.fragment.app.Fragment
-import example.univ.myapplication.databinding.ExampleFragmentTwoBinding
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
+import example.univ.myapplication.databinding.TagTwoPageBinding
 
-class ExampleFragmentTwo: Fragment() {
-    private lateinit var binding: ExampleFragmentTwoBinding
-    private val DEBUG_TAG = "ExampleFragmentTwo"
+class TagTwoActivity: Fragment() {
+    private lateinit var binding: TagTwoPageBinding
+    private val DEBUG_TAG = "TagTwoPage"
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -29,7 +29,7 @@ class ExampleFragmentTwo: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreate(savedInstanceState)
-        binding = ExampleFragmentTwoBinding.inflate(layoutInflater)
+        binding = TagTwoPageBinding.inflate(layoutInflater)
 
         // 타이머 관련 binding
         val timer: Chronometer = binding.chrono

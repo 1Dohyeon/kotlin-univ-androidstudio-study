@@ -13,9 +13,9 @@ class FragmentAdapter(fgManager: FragmentManager, lifecycle: Lifecycle):
     override fun getItemCount(): Int = TAG_NUMS
     override fun createFragment(position: Int): Fragment {
         when(position) {
-            0 -> return ExampleFragment()
-            1 -> return  ExampleFragmentTwo()
+            0 -> return TagOneActivity()
+            1 -> return  TagTwoActivity()
         }
-        return ExampleFragment()
+        return TagOneActivity()
     }
 }
