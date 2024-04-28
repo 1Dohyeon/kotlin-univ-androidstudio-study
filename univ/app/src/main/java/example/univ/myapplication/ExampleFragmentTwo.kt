@@ -71,8 +71,7 @@ class ExampleFragmentTwo: Fragment() {
             selectedDay = dayOfMonth
         }
 
-        textBar.setOnClickListener {
-
+        textBar.setOnLongClickListener {
             if(flag) {
                 timer.stop() // 타이머 정지
                 flag = false
@@ -92,7 +91,9 @@ class ExampleFragmentTwo: Fragment() {
                 Log.d(DEBUG_TAG, "SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}")
                 Log.d(DEBUG_TAG, "Timer.base: ${timer.base}")
             }
+            true
         }
+
 
 
         // RadioGroup 이벤트

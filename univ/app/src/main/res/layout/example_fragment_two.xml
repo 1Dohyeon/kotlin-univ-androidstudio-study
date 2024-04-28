@@ -48,7 +48,8 @@
             android:id="@+id/dateViews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible">
 
             <CalendarView
                 android:id="@+id/calenderView"
