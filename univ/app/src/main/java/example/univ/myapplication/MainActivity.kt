@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import example.univ.myapplication.databinding.TabLayoutBinding
 
@@ -13,6 +14,7 @@ import example.univ.myapplication.databinding.TabLayoutBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: TabLayoutBinding
     private val DEBUG_TAG = "MainActivity"
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
