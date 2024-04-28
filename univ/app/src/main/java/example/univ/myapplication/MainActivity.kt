@@ -6,27 +6,16 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import androidx.annotation.RequiresApi
-import com.google.android.material.tabs.TabLayoutMediator
-import example.univ.myapplication.databinding.TabLayoutBinding
-
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: TabLayoutBinding
+//    private lateinit var binding: TabLayoutBinding
     private val DEBUG_TAG = "MainActivity"
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        binding = TabLayoutBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val tabLayout = binding.tab
-        val viewPage = binding.viewpager
-        viewPage.adapter = FragmentAdapter(supportFragmentManager, lifecycle)
-        TabLayoutMediator(tabLayout, viewPage) {tab, position ->
-            tab.text = "Tab $position"
-        }.attach()
+//        binding = TabLayoutBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
