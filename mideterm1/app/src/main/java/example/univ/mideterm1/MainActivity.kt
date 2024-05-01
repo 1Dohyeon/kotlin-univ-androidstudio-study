@@ -1,10 +1,10 @@
-package example.univ.myapplication
+package example.univ.midterm1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
-import example.univ.myapplication.databinding.ActivityMainBinding
+import example.univ.midterm1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

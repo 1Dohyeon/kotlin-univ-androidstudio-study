@@ -10,7 +10,7 @@
         android:layout_height="300dp"
         android:textAlignment="center"
         android:paddingTop="140dp"
-        android:textSize="30sp"/>
+        android:textSize="50sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,13 +18,16 @@
         android:orientation="horizontal">
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_gravity="center">
 
             <Button
                 android:id="@+id/resetBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:text="RESET"/>
 
             <Button
@@ -32,32 +35,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LAB"
+                android:textSize="15sp"
                 android:visibility="invisible"/>
 
         </FrameLayout>
 
         <Chronometer
             android:id="@+id/smallTime"
-            android:layout_width="227dp"
-            android:layout_height="match_parent"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20sp"
-            android:paddingTop="10dp"/>
+            android:textSize="30sp"
+            android:layout_gravity="center"/>
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
 
             <Button
                 android:id="@+id/startBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:text="START"/>
 
             <Button
                 android:id="@+id/stopBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:text="STOP"
                 android:visibility="invisible"/>
 
