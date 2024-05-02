@@ -26,6 +26,8 @@
 
   -  #9 : 7-2 "TabLayout 기본, adapter와 viewpager를 사용한 tablayout 응용"
  
-  -  #10: timer & 예약프로그램(a4)
+  -  #10: timer & 예약프로그램(tab layouy을 통해 나누어 구현)
  
   -  #11: hanoi 프로그램
+ 
+  -  #12: (a4) #10과 동일하지만 project를 나눔
