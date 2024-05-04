@@ -22,12 +22,18 @@
 
   - #7 : caculator(a3) "#3에서 디자인한 숫자 버튼이 있는 계산기와 #4에서 에러처리를 한 계산기를 합쳐서 숫자버튼이 있고, 소수점 계산이 가능하고, 여러 상황에서의 예외 처리를 한 계산기 구현"
  
-  -  #8 : 하노이 알고리즘, 7-1 "themes.xml에서 기본 색상 변경 후 Toolbar 제작 및 menu layout Toolbar에 설정, Fragment를 통해 두 화면을 버튼으로 넘기면서 보여줌"
+  -  #8 : 하노이 알고리즘, 7-1 "`themes.xml`에서 기본 색상 변경 후 Toolbar 제작 및 menu layout Toolbar에 설정, `Fragment`를 통해 두 화면을 버튼으로 넘기면서 보여줌"
 
-  -  #9 : 7-2 "TabLayout 기본, adapter와 viewpager를 사용한 tablayout 응용"
+  -  #9 : 7-2 "TabLayout 기본, adapter와 `viewpager`를 사용한 tablayout 응용"
  
   -  #10: timer & 예약프로그램(tab layouy을 통해 나누어 구현)
  
   -  #11: hanoi 프로그램
  
   -  #12: (a4) #10과 동일하지만 project를 나눔
+
+- **univ2**
+
+univ처럼 브랜치로 분리 X -> project로 분리 
+
+  - week8
