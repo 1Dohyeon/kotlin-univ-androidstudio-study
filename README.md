@@ -4,10 +4,9 @@
 
 ### Branch
 
-- **main**
-= univ#3
+1. **main** = univ#3
 
-- **univ**
+2. **univ**
   - #1 : 2-1 "기본적인 폴더 구조와 `Toast`로 메시지 띄우는 방법"
     
   - #2 : 3-2 "`binding` 사용 방법과 `EditText`에 적힌 text를 추출하는 방법(`binding.num1.text.toString().toInt()`)을 이용하여 간단한 계산기 구현"
@@ -32,8 +31,6 @@
  
   -  #12: (a4) #10과 동일하지만 project를 나눔
 
-- **univ2**
-
+3. **univ2**
 univ처럼 브랜치로 분리 X -> project로 분리 
-
   - week8
