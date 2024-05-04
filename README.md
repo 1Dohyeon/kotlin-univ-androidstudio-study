@@ -27,3 +27,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 ```
+**theme.xml**
+```
+<item name="colorPrimary">#1A7E2B</item>
+```
