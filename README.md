@@ -1,11 +1,11 @@
-## Version
+## Setting
+
+### Verson
 
 1.19
 
----
-## Projects
+### Gradle And Theme
 
-### 공통 세팅
 **gradle**
 ``` kts
 android{
@@ -30,5 +30,8 @@ dependencies {
 ```
 <item name="colorPrimary">#1A7E2B</item>
 ```
+
+---
+## Projects
 
 ### 1. Week8
