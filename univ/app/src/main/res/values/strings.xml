@@ -1,18 +1,6 @@
 <resources>
-    <string name="app_name">SimpleCalculator</string>
-    <string name="timeForBooking">예약에 걸린 시간 %s</string>
-    <string name="setDate">날짜 설정</string>
-    <string name="setTime">시간 설정</string>
-    <string name="textBar">textBar</string>
-
-    <string name="Frag1">Flag1</string>
-    <string name="Frag2">Flag2</string>
-
+    <string name="app_name">app_name</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
     <string name="reset">reset</string>
-    <string name="plus5">+5</string>
-    <string name="sub5">-5</string>
-    <string name="lab">Lab</string>
-
 </resources>

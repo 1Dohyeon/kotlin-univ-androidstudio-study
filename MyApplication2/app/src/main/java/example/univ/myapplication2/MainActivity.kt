@@ -1,13 +1,11 @@
-package example.univ.myapplication
+package example.univ.myapplication2
 
-import android.app.AlertDialog
-import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.os.SystemClock
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.CalendarView
 import android.widget.Chronometer
 import android.widget.FrameLayout
@@ -15,22 +13,16 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.TimePicker
-import androidx.fragment.app.Fragment
-import example.univ.myapplication.databinding.ExampleFragmentTwoBinding
-import androidx.annotation.RequiresApi
+import example.univ.myapplication2.databinding.ActivityMainBinding
 
-class ExampleFragmentTwo: Fragment() {
-    private lateinit var binding: ExampleFragmentTwoBinding
-    private val DEBUG_TAG = "ExampleFragmentTwo"
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private val DEBUG_TAG = "MainActivity"
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ExampleFragmentTwoBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // 타이머 관련 binding
         val timer: Chronometer = binding.chrono
@@ -45,7 +37,7 @@ class ExampleFragmentTwo: Fragment() {
         val textBar: TextView = binding.res
 
         var flag = false
-        var time: Long = SystemClock.elapsedRealtime() - timer.base
+        var time: Long = 0
 
         timer.setOnClickListener {
             if (!flag) { // 타이머가 비활성화 상태
@@ -73,40 +65,27 @@ class ExampleFragmentTwo: Fragment() {
         }
 
         textBar.setOnLongClickListener {
+            if(flag) {
+                timer.stop() // 타이머 정지
+                flag = false
+                time = SystemClock.elapsedRealtime() - timer.base
 
-            AlertDialog.Builder(this.activity).run {
-                setTitle("HELLO")
-                setIcon(android.R.drawable.ic_dialog_dialer)
-                setNegativeButton("cancel", null)
-                setPositiveButton("accept") { _, _ ->
-                    if(flag) {
-                        timer.stop() // 타이머 정지
-                        flag = false
-                        time = SystemClock.elapsedRealtime() - timer.base
+                radioGroup.visibility = View.INVISIBLE
+                dateGroup.visibility = View.INVISIBLE
 
-                        radioGroup.visibility = View.INVISIBLE
-                        dateGroup.visibility = View.INVISIBLE
+                // 선택한 시간 가져오기
+                val hourOfDay = timePicker.hour
+                val minute = timePicker.minute
 
-                        // 선택한 시간 가져오기
-                        val hourOfDay = timePicker.hour
-                        val minute = timePicker.minute
+                // TextView에 날짜 및 시간 설정
+                textBar.text = String.format("%d년 %d월 %d일 %d시 %d분", selectedYear, selectedMonth, selectedDay, hourOfDay, minute)
 
-                        // TextView에 날짜 및 시간 설정
-                        textBar.text = String.format("%d년 %d월 %d일 %d시 %d분", selectedYear, selectedMonth, selectedDay, hourOfDay, minute)
-
-                        Log.d(DEBUG_TAG, "Time: $time")
-                        Log.d(DEBUG_TAG, "SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}")
-                        Log.d(DEBUG_TAG, "Timer.base: ${timer.base}")
-                    }
-                }
-                show()
+                Log.d(DEBUG_TAG, "Time: $time")
+                Log.d(DEBUG_TAG, "SystemClock.elapsedRealtime(): ${SystemClock.elapsedRealtime()}")
+                Log.d(DEBUG_TAG, "Timer.base: ${timer.base}")
             }
-
             true
         }
-
-
-
 
         // RadioGroup 이벤트
         setDate.setOnClickListener {
@@ -119,6 +98,5 @@ class ExampleFragmentTwo: Fragment() {
             calendarView.visibility = View.INVISIBLE
         }
 
-        return binding.root
     }
 }
