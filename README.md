@@ -1,9 +1,13 @@
-### Version
+## Version
 
 1.19
 
-### Gradle
+---
+## Projects
 
+### 1. Week8
+
+**gradle**
 ``` kts
 android{
     // ...
