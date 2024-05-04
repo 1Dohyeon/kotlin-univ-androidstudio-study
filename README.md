@@ -5,8 +5,7 @@
 ---
 ## Projects
 
-### 1. Week8
-
+### 공통 세팅
 **gradle**
 ``` kts
 android{
@@ -31,3 +30,5 @@ dependencies {
 ```
 <item name="colorPrimary">#1A7E2B</item>
 ```
+
+### 1. Week8
