@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     fun readDiary(fName: String) : String?{
         return null
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
