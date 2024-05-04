@@ -5,7 +5,7 @@
 ---
 ## Branch
 
-**1. main** = univ#3
+**1. main** = univ2
 
 **2. univ**
   - #1 : 2-1 "기본적인 폴더 구조와 `Toast`로 메시지 띄우는 방법"
