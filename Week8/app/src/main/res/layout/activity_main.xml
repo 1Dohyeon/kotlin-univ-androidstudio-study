@@ -17,10 +17,24 @@
         android:lines="10"
         android:hint="일기없음"
         android:id="@+id/editText"/>
-    <Button
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="submit"
-        android:id="@+id/smtBtn"/>
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="새로 저장"
+            android:id="@+id/smtBtn"
+            android:visibility="visible"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="수정 하기"
+            android:id="@+id/updateBtn"
+            android:visibility="invisible"/>
+
+    </FrameLayout>
 
 </LinearLayout>
