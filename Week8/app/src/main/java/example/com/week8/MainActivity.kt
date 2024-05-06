@@ -54,8 +54,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         /** 새로 저장 버튼을 눌렀을 경우 실행.
-         * editText에 적힌 문자열을 새 파일에 그대로 작성하여 저장  */
+         * editText에 적힌 문자열을 파일에 그대로 작성하여 저장  */
         binding.smtBtn.setOnClickListener {
+            val diaryContent = binding.editText.text.toString() // EditText의 내용을 문자열로 가져옴
+            openFileOutput(fName, Context.MODE_PRIVATE).use {
+                it.write(diaryContent.toByteArray()) // 일기 내용을 파일에 저장
+            }
+        }
+
+        /** 수정 하기 버튼을 눌렀을 경우 실행.
+         * editText에 적힌 문자열을 단순히 파일에 저장하기에 smtBtn 리스너와 같음  */
+        binding.updateBtn.setOnClickListener {
             val diaryContent = binding.editText.text.toString() // EditText의 내용을 문자열로 가져옴
             openFileOutput(fName, Context.MODE_PRIVATE).use {
                 it.write(diaryContent.toByteArray()) // 일기 내용을 파일에 저장
