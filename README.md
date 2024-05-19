@@ -28,10 +28,15 @@ dependencies {
 ```
 **theme.xml**
 ```
-<item name="colorPrimary">#1A7E2B</item>
+    <style name="Base.Theme.LMSassignments3_1" parent="Theme.Material3.DayNight">
 ```
 
 ---
 ## Projects
 
-### 1. Week8
+### 1. LMSassignments3_1
+
+두 개의 액티비티를 다루는 연습
+- Log를 통해 lifecycle에 대하여 공부
+
+### 2. LMSassignments3_2
