@@ -5,19 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import example.com.assignment5_1.databinding.ActivityMainBinding
+import java.io.FileNotFoundException
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
-    private fun readDiary(fName: String) : String?{
+    private fun readDiary(fName: String): String? {
         var diaryStr: String? = null
         try {
-            openFileInput(fName).bufferedReader().forEachLine {
-                diaryStr = it
+            openFileInput(fName).bufferedReader().useLines { lines ->
+                diaryStr = lines.fold("") { some, text ->
+                    "$some\n$text"
+                }.trim()
             }
-        } catch (e: IndexOutOfBoundsException) {
+        } catch (e: FileNotFoundException) {
+            // 파일이 없을 경우 예외 처리
             e.printStackTrace() // 에러 처리를 위해 스택 트레이스를 출력
+        } catch (e: Exception) {
+            // 그 외 예외 처리
+            e.printStackTrace()
         }
         return diaryStr
     }
