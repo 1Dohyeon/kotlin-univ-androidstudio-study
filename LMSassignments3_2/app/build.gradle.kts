@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "example.com.lmsassignments3_1"
+    namespace = "example.com.lmsassignments3_2"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "example.com.lmsassignments3_1"
+        applicationId = "example.com.lmsassignments3_2"
         minSdk = 19
         targetSdk = 34
         versionCode = 1
