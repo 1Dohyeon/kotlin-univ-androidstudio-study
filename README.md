@@ -28,7 +28,7 @@ dependencies {
 ```
 **theme.xml**
 ```
-<item name="colorPrimary">#1A7E2B</item>
+    <style name="Base.Theme.LMSassignments3_1" parent="Theme.Material3.DayNight">
 ```
 
 ---
