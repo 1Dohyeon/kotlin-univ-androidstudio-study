@@ -34,4 +34,5 @@ dependencies {
 ---
 ## Projects
 
-### 1. Week8
+### 1. LMSassignments3_1
+### 2. LMSassignments3_2
