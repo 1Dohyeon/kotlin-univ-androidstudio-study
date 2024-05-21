@@ -3,13 +3,39 @@ package example.com.assignment5_1
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import example.com.assignment5_1.databinding.ActivityMainBinding
-import java.io.FileNotFoundException
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    val TAG = "MainActivity Debug"
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
+    }
 
     private fun readDiary(fName: String): String? {
         var diaryStr: String? = null
@@ -18,12 +44,10 @@ class MainActivity : AppCompatActivity() {
                 diaryStr = lines.fold("") { some, text ->
                     "$some\n$text"
                 }.trim()
+                Log.d(TAG, "$diaryStr")
             }
-        } catch (e: FileNotFoundException) {
-            // 파일이 없을 경우 예외 처리
-            e.printStackTrace() // 에러 처리를 위해 스택 트레이스를 출력
         } catch (e: Exception) {
-            // 그 외 예외 처리
+            // 에러 처리를 위해 스택 트레이스를 출력
             e.printStackTrace()
         }
         return diaryStr
@@ -35,13 +59,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val context = applicationContext
-        val TAG = "Debug"
 
-        var cal = Calendar.getInstance()
-        var cy = cal.get(Calendar.YEAR)
-        var cm = cal.get(Calendar.MONTH)
-        var cd = cal.get(Calendar.DAY_OF_MONTH)
-        lateinit var fName: String
+        // 날짜 가져옴
+        val cal = Calendar.getInstance()
+        val cy = cal.get(Calendar.YEAR)
+        val cm = cal.get(Calendar.MONTH)
+        val cd = cal.get(Calendar.DAY_OF_MONTH)
+        
+        // 오늘날짜로 초기화
+        var fName = String.format("%04d_%02d_%02d.txt", cy, cm + 1, cd) 
+
+        // Read today's diary content on app start
+        val diaryContent = readDiary(fName)
+        if(diaryContent != null) {
+            binding.editText.setText(diaryContent)
+            binding.updateBtn.visibility = View.VISIBLE
+        } else {
+            binding.editText.setText("")
+            binding.updateBtn.visibility = View.INVISIBLE
+        }
 
         /** 날짜가 변경될 때 실행.
          * 날짜마다 파일이 있다면, 파일의 내용을 보여줌 */
@@ -49,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             fName = String.format("%04d_%02d_%02d.txt", year, month + 1, day) // 파일 이름 설정
             val diaryContent = readDiary(fName) // 해당 날짜의 일기 내용을 읽어옴
 
-            if(diaryContent!=null) { // 불러올 파일이 있다면(작성했던 다이어리가 있다면)
+            if(diaryContent != null) { // 불러올 파일이 있다면(작성했던 다이어리가 있다면)
                 binding.editText.setText(diaryContent) // 파일 내용을 EditText에 표시
                 binding.updateBtn.visibility = View.VISIBLE // 수정 하기 버튼이 보이도록 함
             } else { // 파일이 없다면
@@ -75,6 +111,5 @@ class MainActivity : AppCompatActivity() {
                 it.write(diaryContent.toByteArray()) // 일기 내용을 파일에 저장
             }
         }
-
     }
 }
