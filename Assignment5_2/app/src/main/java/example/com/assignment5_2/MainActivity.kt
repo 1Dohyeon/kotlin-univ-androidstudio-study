@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val paint = Paint()
 
         // 도형 정보를 저장할 리스트
-        val shapes = ArrayList<DrawShape>()
+        val shapes = ArrayList<DrawArr>()
 
         override fun onTouchEvent(event: MotionEvent?): Boolean {
             when (event?.action) {
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     stopX = event.x
                     stopY = event.y
                     // 도형 정보를 리스트에 추가
-                    shapes.add(DrawShape(curShape, startX, startY, stopX, stopY))
+                    shapes.add(DrawArr(curShape, startX, startY, stopX, stopY))
                     this.invalidate()
                 }
             }
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 도형 정보를 저장할 클래스
-    data class DrawShape(val type: Int, val startX: Float, val startY: Float, val stopX: Float, val stopY: Float)
+    data class DrawArr(val type: Int, val startX: Float, val startY: Float, val stopX: Float, val stopY: Float)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
