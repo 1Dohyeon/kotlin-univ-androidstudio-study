@@ -8,9 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 
 class BinaryTreeView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     private val paint = Paint().apply {
@@ -21,13 +19,13 @@ class BinaryTreeView @JvmOverloads constructor(
     }
 
     private val circlePaint = Paint().apply {
-        color = Color.BLACK // 원 색상
+        color = Color.BLACK
         style = Paint.Style.FILL
         isAntiAlias = true
     }
 
     private val linePaint = Paint().apply {
-        color = Color.GRAY // 선 색상
+        color = Color.GRAY
         strokeWidth = 5f
         isAntiAlias = true
     }

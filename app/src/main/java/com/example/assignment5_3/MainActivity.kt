@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
         add(0)
     }
 
-    private fun updateTree() {
-        val root = BinaryTreeUtils.createBinaryTree(arr.toTypedArray())
+    private fun maxHeapTree() {
+        val tree = BinaryTree();
+        val root = tree.createBinaryTree(arr.toTypedArray())
         binaryTreeView.root = root
     }
 
@@ -46,26 +47,27 @@ class MainActivity : AppCompatActivity() {
         val viewButton: Button = binding.viewButton
         val visualizationButton: Button = binding.visualizationButton
 
-        updateTree()
+        maxHeapTree()
 
         popButton.setOnClickListener {
             if (arr.size > 1) {
                 arr.removeAt(arr.size - 1)
-                updateTree()
+                maxHeapTree()
             } else {
-                Toast.makeText(this, "No elements to pop", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "삭제할 원소가 없습니다.", Toast.LENGTH_SHORT).show()
             }
         }
 
         pushButton.setOnClickListener {
             val value = editText.text.toString().toIntOrNull()
+            val tree = BinaryTree()
             if (value != null) {
                 if (arr.size > 15) {
                     Toast.makeText(this, "더 이상 추가할 수 없습니다.", Toast.LENGTH_SHORT).show()
                 } else {
                     arr.add(value)
-                    BinaryTreeUtils.heapify(arr)
-                    updateTree()
+                    tree.heapify(arr)
+                    maxHeapTree()
                 }
             } else {
                 Toast.makeText(this, "Enter a valid number", Toast.LENGTH_SHORT).show()

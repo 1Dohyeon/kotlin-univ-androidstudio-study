@@ -1,6 +1,6 @@
 package com.example.assignment5_3
 
-object BinaryTreeUtils {
+class BinaryTree {
 
     fun createBinaryTree(arr: Array<Int>): Node? {
         if (arr.isEmpty()) return null
