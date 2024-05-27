@@ -28,9 +28,8 @@ class MainActivity : AppCompatActivity() {
                 put(myentry.album, entry.album)
                 put(myentry.num_like, entry.num_like)
             }
-            Log.d("MainActivity", values.toString())
             val newRowId=db?.insert(myentry.TABLE_NAME, null, values)
-            Log.d("MainActivity", newRowId.toString())
+            Log.d("MainActivity", "${newRowId.toString()}: ${values.toString()}")
         }
         db.close()
     }
