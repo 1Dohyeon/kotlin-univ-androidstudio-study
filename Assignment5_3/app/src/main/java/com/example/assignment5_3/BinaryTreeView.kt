@@ -12,7 +12,7 @@ class BinaryTreeView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private val paint = Paint().apply {
-        color = Color.YELLOW // 텍스트 색상
+        color = Color.YELLOW
         strokeWidth = 5f
         textSize = 50f
         isAntiAlias = true
@@ -37,8 +37,8 @@ class BinaryTreeView @JvmOverloads constructor(
         }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val desiredWidth = 500 // 변경 가능한 값
-        val desiredHeight = 500 // 변경 가능한 값
+        val desiredWidth = 500
+        val desiredHeight = 700
 
         val width = resolveSize(desiredWidth, widthMeasureSpec)
         val height = resolveSize(desiredHeight, heightMeasureSpec)
@@ -48,22 +48,23 @@ class BinaryTreeView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        root?.let { drawNode(canvas, it, width / 2f, 100f, width / 4f) }
+        root?.let { drawNode(canvas, it, width / 2f, 200f, width / 4f) }
     }
 
     private fun drawNode(canvas: Canvas, node: Node?, x: Float, y: Float, offset: Float) {
         if (node == null) return
 
-        // Draw circle
+        // text를 둘러싼 원 그림
         canvas.drawCircle(x, y, 50f, circlePaint)
 
-        // Draw text
+        // text를 그림
         val text = node.value.toString()
         val textWidth = paint.measureText(text)
         val textX = x - textWidth / 2
         val textY = y + paint.textSize / 4
         canvas.drawText(text, textX, textY, paint)
 
+        // 노드를 연결하는 선을 그림
         if (node.left != null) {
             canvas.drawLine(x, y + 50, x - offset, y + 150, linePaint)
             drawNode(canvas, node.left, x - offset, y + 150, offset / 2)

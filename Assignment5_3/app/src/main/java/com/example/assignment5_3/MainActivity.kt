@@ -70,12 +70,12 @@ class MainActivity : AppCompatActivity() {
                     maxHeapTree()
                 }
             } else {
-                Toast.makeText(this, "Enter a valid number", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "숫자를 입력해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 
         viewButton.setOnClickListener {
-            Log.d("MainActivity", "Current array: $arr")
+            Log.d("MainActivity", "현재 binary heap array: $arr")
         }
 
         visualizationButton.setOnClickListener {
