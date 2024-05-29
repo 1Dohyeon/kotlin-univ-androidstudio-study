@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteConstraintException
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.week12_1.databinding.ActivityMainBinding
 
@@ -30,10 +31,23 @@ class MainActivity : AppCompatActivity() {
             resetDatabase()
         }
 
-        // Set onClickListener for submit button
         binding.submitBtn.setOnClickListener {
             addEntry()
         }
+
+        //60202464 원도현
+        adapter.setItemClickListener(object : MyAdapter.OnItemClickListner {
+            override fun onClick(v: View, position: Int) {
+                val db = dbHelper.writableDatabase
+                db.delete(MyDatabase.MyDBContract.MyEntry.TABLE_NAME, "${MyDatabase.MyDBContract.MyEntry.title}=?",
+                    arrayOf(adapter.getElement(position).title)
+                )
+                val newList = dbHelper.selectAll()
+                adapter.setList(newList)
+                adapter.notifyDataSetChanged()
+                db.close()
+            }
+        })
 
         // Load initial data
         loadData()
@@ -53,9 +67,9 @@ class MainActivity : AppCompatActivity() {
         val db = dbHelper.writableDatabase
         Log.d("MainActivity", "Start")
         val entryArr = mutableListOf(
-            MyElement(1, "aespa", "Spicy", "MY WORLD", 68136),
-            MyElement(2, "IVE", "I AM", "I've IVE", 153643),
-            MyElement(3, "LESSERAFIM", "UNFORGIVEN", "UNFORGIVEN", 85725)
+            MyElement(1, "Spicy", "aespa", "MY WORLD", 68136),
+            MyElement(2, "I AM", "IVE", "I've IVE", 153643),
+            MyElement(3, "UNFORGIVEN", "LESSERAFIM", "UNFORGIVEN", 85725)
         )
         for (entry in entryArr) {
             val myentry = MyDatabase.MyDBContract.MyEntry
@@ -70,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                 val newRowId = db.insertOrThrow(myentry.TABLE_NAME, null, values)
                 Log.d("MainActivity", newRowId.toString())
             } catch (e: SQLiteConstraintException) {
-                db?.update(myentry.TABLE_NAME, values, "${myentry.title} LIKE ?", arrayOf(entry.title))
+                db.update(myentry.TABLE_NAME, values, "${myentry.title} LIKE ?", arrayOf(entry.title))
             }
         }
         db.close()

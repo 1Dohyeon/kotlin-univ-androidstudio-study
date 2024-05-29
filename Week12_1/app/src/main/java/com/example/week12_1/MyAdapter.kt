@@ -1,6 +1,7 @@
 package com.example.week12_1
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +17,7 @@ class MyAdapter(private var dataSet: MutableList<MyElement>) : RecyclerView.Adap
         return MyViewHolder(ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
+
     fun setList(newList: MutableList<MyElement>) {
         this.dataSet = newList
         notifyDataSetChanged()
@@ -23,6 +25,15 @@ class MyAdapter(private var dataSet: MutableList<MyElement>) : RecyclerView.Adap
 
     fun getElement(pos: Int): MyElement {
         return dataSet[pos]
+    }
+
+    private lateinit var itemClickListner: OnItemClickListner
+    interface OnItemClickListner {
+        fun onClick(v: View, position: Int)
+    }
+
+    fun setItemClickListener(onItemClickListner: OnItemClickListner) {
+        this.itemClickListner = onItemClickListner
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -35,5 +46,8 @@ class MyAdapter(private var dataSet: MutableList<MyElement>) : RecyclerView.Adap
         binding.artist.text = dataSet[position].artist
         binding.album.text = dataSet[position].album
         binding.numLike.text = dataSet[position].num_like.toString()
+        binding.elem.setOnClickListener{
+            itemClickListner.onClick(it, position)
+        }
     }
 }
