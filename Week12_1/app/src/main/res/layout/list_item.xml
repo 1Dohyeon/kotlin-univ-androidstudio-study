@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    android:layout_marginBottom="10dp"
     android:orientation="horizontal">
 
     <TextView
@@ -46,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="68136"
-        android:id="@+id/num_like"
+        android:id="@+id/numLike"
         android:layout_marginLeft="20dp"/>
 
 </LinearLayout>
